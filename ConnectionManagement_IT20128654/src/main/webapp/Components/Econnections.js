@@ -1,7 +1,9 @@
 
-$(document).ready(function()
+$(document).ready(function(){
+if ($("#alertSuccess").text().trim() == "")
 {
 $("#alertSuccess").hide();
+}
 $("#alertError").hide();
 });
 
@@ -38,6 +40,8 @@ var type = ($("#hidEconnectionIDSave").val() == "") ? "POST" : "PUT";
 
 function onEconnectionSaveComplete(response, status)
 { 
+	location.reload();
+	
 if (status == "success") 
  { 
  var resultSet = JSON.parse(response); 
@@ -96,6 +100,8 @@ $(document).on("click", ".btnRemove", function(event)
 		
 function onEconnectionDeleteComplete(response, status)
 { 
+	location.reload();
+	
 if (status == "success") 
  { 
  var resultSet = JSON.parse(response); 
